@@ -1,12 +1,31 @@
+<!DOCTYPE html>
 <html>
 <head>
+<meta charset="utf-8">
 <title>Text to MindF**ck</title>
+<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-<form action="#">
-    <input type="rich-text" id="text" class="text"/>
-    <input type="rich-text" id="mf-text" class="mf-text"/>
-    
+    <div id="main" class="container">
+
+<form id="textform" class="form" role="form">
+    <h2 class="form-heading">Convert your text into a mind compatible language! </h2>
+    <label for="pretext" class="col-md-4 control-label">Type your text here:</label>
+    <textarea id="pretext" name="textarea" class="form-control"></textarea>
+    <br />
+    <label for="mftext" class="col-md-4 control-label">Your mind f**ck text:</label>
+    <textarea id="mftext" name="textarea" class="form-control" disabled="disabled"></textarea>
+<br />
+    <button type="reset" class="btn btn-sm btn-warning">Clear</button>
 </form>
+</div>
+<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="js/mapper.js"></script>
+    <script type="text/javascript">
+    $ = jQuery.noConflict();
+    $(document).ready(function($) {
+        $('#textform').applyConversion({});
+    });
+    </script>
 </body>
 </html>
