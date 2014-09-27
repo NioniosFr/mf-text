@@ -7,16 +7,22 @@
 </head>
 <body>
     <div id="main" class="container">
-
 <form id="textform" class="form" role="form">
-    <h2 class="form-heading">Convert your text into a mind compatible language! </h2>
-    <label for="pretext" class="col-md-4 control-label">Type your text here:</label>
-    <textarea id="pretext" name="textarea" class="form-control"></textarea>
-    <br />
-    <label for="mftext" class="col-md-4 control-label">Your mind f**ck text:</label>
-    <textarea id="mftext" name="textarea" class="form-control" disabled="disabled"></textarea>
-<br />
-    <button type="reset" class="btn btn-sm btn-warning">Clear</button>
+    <h2 class="form-heading">Convert your text into a brain confusing compatible structure! </h2>
+   <div class="form-group">
+    <label for="pretext" class="control-label">Type your text here:</label>
+    <textarea id="pretext" name="textarea" class="form-control" rows="5" placeholder="Add your text here and select to convert it!"></textarea>
+    </div>
+    <div class="form-group">
+    <label for="mftext" class="control-label">The brain confusing text:</label>
+    <textarea id="mftext" name="textarea" class="form-control" rows="5" readonly placeholder="4dd y0ur 73x7 h3r3 4nd 53l3c7 70 c0nv3r7 17!"></textarea>
+</div>
+<div class="form-group">
+    <button id="convert" type="button" class="btn btn-sm btn-primary btn-block">Convert text</button>
+</div>
+<div class="form-group">
+    <button type="reset" class="btn btn-sm btn-warning">Clear All</button>
+</div>
 </form>
 </div>
 <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
@@ -24,7 +30,11 @@
     <script type="text/javascript">
     $ = jQuery.noConflict();
     $(document).ready(function($) {
-        $('#textform').applyConversion({});
+        $('#textform').applyConversion({
+            pretext: '#pretext',
+            mftext:  '#mftext',
+            button:  '#convert'
+        });
     });
     </script>
 </body>
